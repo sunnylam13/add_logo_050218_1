@@ -65,6 +65,10 @@ for filename in os.listdir(target_dir):
 		im = im.resize( (width,height) )
 		logging.debug( 'Resizing image successful.' )
 
-# add the logo
-# save changes
+	# add the logo
+	print("Adding logo to %s..." % str(filename) )
+	im.paste( logoIm, (width - logoWidth, height - logoHeight), logoIm ) # passing 3rd arg pastes transparency pixels as well
+
+	# save changes
+	im.save( os.path.join(output_dir,filename) )
 

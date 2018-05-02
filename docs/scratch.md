@@ -52,3 +52,7 @@ makes it easier to change later
 
 you need to find out if the image is a wide or tall image if it does need to be resized...
 
+## Wednesday, May 2, 2018 11:06 AM
+
+want to add logo to the bottom right corner
+
