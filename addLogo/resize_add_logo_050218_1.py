@@ -14,9 +14,9 @@ from PIL import Image
 
 SQUARE_FIT_SIZE = 300
 LOGO_FILENAME = 'catlogo.png'
-target_dir = '.' # use '.' for current working directory (cwd), default
+target_dir = '.' # use '.' for current working directory (cwd), default target folder
 target_dir = "/Users/sunnyair/Dropbox/Python Programming/auto_bore_py_020518_1"
-output_dir = 'withLogo'
+output_dir = 'withLogo' # default output folder
 output_dir = "/Users/sunnyair/Downloads/withLogo"
 
 logoIm = Image.open(LOGO_FILENAME)
