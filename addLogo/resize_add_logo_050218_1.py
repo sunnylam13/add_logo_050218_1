@@ -18,11 +18,23 @@ LOGO_FILENAME = 'catlogo.png'
 logoIm = Image.open(LOGO_FILENAME)
 logoWidth,logoHeight = logoIm.size # `logoIm.size` returns a tuple of width, height
 
+os.makedirs('withLogo',exist_ok=True) # create a folder unless it already exists
+
 # loop over all files in the working directory
+
+for filename in os.listdir('.'):
+	if not ( filename.endswith('.png') or filename.endswith('.jpg') or filename == LOGO_FILENAME ):
+		continue # skip non-image files and the logo file itself
+
+	im = Image.open(filename)
+	width,height = im.size
+
 # check if the image needs to be resized
+
+
+
 # calculate the new width and height to resize to
 # resize the image
 # add the logo
 # save changes
-
 

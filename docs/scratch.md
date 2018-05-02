@@ -32,3 +32,12 @@ Code
 
 * call `save()` method to save changes using original filename
 
+## Wednesday, May 2, 2018 10:34 AM
+
+adding:
+
+	SQUARE_FIT_SIZE = 300
+	LOGO_FILENAME = 'catlogo.png'
+
+makes it easier to change later
+
