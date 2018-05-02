@@ -56,3 +56,15 @@ you need to find out if the image is a wide or tall image if it does need to be 
 
 want to add logo to the bottom right corner
 
+## Wednesday, May 2, 2018 11:11 AM
+
+Ideas for Similar Programs
+
+* add text or a website URL to images
+
+* add time stamps to images
+
+* copy or move images into different folders based on their sizes
+
+* add a mostly transparent watermark to an image to prevent others from copying it
+
