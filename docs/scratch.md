@@ -41,3 +41,14 @@ adding:
 
 makes it easier to change later
 
+	if width > SQUARE_FIT_SIZE and height > SQUARE_FIT_SIZE:
+		# calculate the new width and height to resize to
+		if width > height:
+			height = int( (SQUARE_FIT_SIZE/width) * height )
+			width = SQUARE_FIT_SIZE
+		else:
+			width = int( (SQUARE_FIT_SIZE/height) * width )
+			height = SQUARE_FIT_SIZE
+
+you need to find out if the image is a wide or tall image if it does need to be resized...
+

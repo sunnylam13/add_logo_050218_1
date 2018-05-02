@@ -33,10 +33,19 @@ for filename in os.listdir(target_dir):
 
 # check if the image needs to be resized
 
+if width > SQUARE_FIT_SIZE and height > SQUARE_FIT_SIZE:
+	# calculate the new width and height to resize to
+	if width > height:
+		height = int( (SQUARE_FIT_SIZE/width) * height )
+		width = SQUARE_FIT_SIZE
+	else:
+		width = int( (SQUARE_FIT_SIZE/height) * width )
+		height = SQUARE_FIT_SIZE
 
+	# resize the image
+	print('Resizing %s...' % str(filename))
+	im = im.resize( (width,height) )
 
-# calculate the new width and height to resize to
-# resize the image
 # add the logo
 # save changes
 
