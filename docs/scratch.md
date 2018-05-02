@@ -68,3 +68,7 @@ Ideas for Similar Programs
 
 * add a mostly transparent watermark to an image to prevent others from copying it
 
+## Wednesday, May 2, 2018 11:50 AM
+
+for some reason `catlogo.png` is too large...  and doesn't fit in the bottom right corner...
+
