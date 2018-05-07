@@ -11,6 +11,7 @@ logging.basicConfig(level=logging.DEBUG, format=" %(asctime)s - %(levelname)s - 
 
 import os
 from PIL import Image
+import re
 
 #####################################
 # GLOBAL VARIABLES
@@ -39,6 +40,22 @@ img_file_ext_regex1 = re.compile(r'''
 		([pngPNGjpgJPGgifGIFbmpBMPjpegJPEG]) # all file extensions in a capture group
 	''', re.VERBOSE)
 
+png_ext_regex1 = re.compile(r'''
+		([pngPNG]) # all file extensions in a capture group
+	''', re.VERBOSE)
+
+jpg_ext_regex1 = re.compile(r'''
+		([jpegJPEG]) # all file extensions in a capture group
+	''', re.VERBOSE)
+
+gif_ext_regex1 = re.compile(r'''
+		([gifGIF]) # all file extensions in a capture group
+	''', re.VERBOSE)
+
+bmp_ext_regex1 = re.compile(r'''
+		([bmpBMP]) # all file extensions in a capture group
+	''', re.VERBOSE)
+
 #####################################
 # END REGEX COMPILES
 #####################################
@@ -64,7 +81,7 @@ if target_dir != ".":
 
 for filename in os.listdir(target_dir):
 
-	if not ( filename.endswith('.png') or filename.endswith('.jpg') or filename.endswith('.gif') or filename.endswith('.bmp') or filename == LOGO_FILENAME ):
+	if not ( png_ext_regex1.findall(filename) or jpg_ext_regex1.findall(filename) or gif_ext_regex1.findall(filename) or bmp_ext_regex1.findall(filename) or filename == LOGO_FILENAME ):
 		continue # skip non-image files and the logo file itself, i.e. skip remaining code below if it does not match our conditions
 
 	logging.debug( 'Accessing file:  %s' % str(filename) )
