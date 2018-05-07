@@ -72,3 +72,11 @@ Ideas for Similar Programs
 
 for some reason `catlogo.png` is too large...  and doesn't fit in the bottom right corner...
 
+## Monday, May 7, 2018 5:21 PM
+
+Image File Extension Check
+
+case insensitive
+
+https://regexr.com/3p39j
+

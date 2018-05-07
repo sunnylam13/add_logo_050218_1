@@ -12,6 +12,10 @@ logging.basicConfig(level=logging.DEBUG, format=" %(asctime)s - %(levelname)s - 
 import os
 from PIL import Image
 
+#####################################
+# GLOBAL VARIABLES
+#####################################
+
 SQUARE_FIT_SIZE = 300
 # LOGO_FILENAME = './catlogo.png' # make sure this file is also in the cwd if you change it; default
 LOGO_FILENAME = "/Users/sunnyair/Dropbox/python_projects/add_logo_050218_1/addLogo/catlogo.png"
@@ -23,6 +27,26 @@ output_dir = "/Users/sunnyair/Downloads/withLogo"
 logoIm = Image.open(LOGO_FILENAME)
 logoWidth,logoHeight = logoIm.size # `logoIm.size` returns a tuple of width, height
 
+#####################################
+# END GLOBAL VARIABLES
+#####################################
+
+#####################################
+# REGEX COMPILES
+#####################################
+
+img_file_ext_regex1 = re.compile(r'''
+		([pngPNGjpgJPGgifGIFbmpBMPjpegJPEG]) # all file extensions in a capture group
+	''', re.VERBOSE)
+
+#####################################
+# END REGEX COMPILES
+#####################################
+
+#####################################
+# WORKING DIRECTORIES
+#####################################
+
 os.makedirs(output_dir,exist_ok=True) # create a folder unless it already exists
 
 # change current working directory if not using the default
@@ -30,13 +54,17 @@ os.makedirs(output_dir,exist_ok=True) # create a folder unless it already exists
 if target_dir != ".":
 	os.chdir(target_dir)
 
+#####################################
+# END WORKING DIRECTORIES
+#####################################
+
 # loop over all files in the working directory
 
 # logging.debug( 'Files in target directory are:  %s' % str( os.listdir(target_dir) ) )
 
 for filename in os.listdir(target_dir):
 
-	if not ( filename.endswith('.png') or filename.endswith('.jpg') or filename == LOGO_FILENAME ):
+	if not ( filename.endswith('.png') or filename.endswith('.jpg') or filename.endswith('.gif') or filename.endswith('.bmp') or filename == LOGO_FILENAME ):
 		continue # skip non-image files and the logo file itself, i.e. skip remaining code below if it does not match our conditions
 
 	logging.debug( 'Accessing file:  %s' % str(filename) )
