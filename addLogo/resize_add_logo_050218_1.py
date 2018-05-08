@@ -52,7 +52,7 @@ if target_dir != ".":
 
 for filename in os.listdir(target_dir):
 
-	if not ( filename.endswith('.png') or filename.endswith('.jpg') or filename == LOGO_FILENAME ):
+	if not ( filename.endswith('.png') or filename.endswith('.jpg' or filename.endswith('.JPG') or filename.endswith('.PNG') or filename.endswith('.bmp') or filename.endswith('.BMP') or filename.endswith('.gif') or filename.endswith('.GIF') ) or filename == LOGO_FILENAME ):
 		continue # skip non-image files and the logo file itself, i.e. skip remaining code below if it does not match our conditions
 
 	logging.debug( 'Accessing file:  %s' % str(filename) )
