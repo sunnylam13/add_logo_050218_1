@@ -80,3 +80,12 @@ case insensitive
 
 https://regexr.com/3p39j
 
+## Tuesday, May 8, 2018 11:07 AM
+
+I went with this IF statement:
+
+	if not ( filename.endswith('.png') or filename.endswith('.jpg' or filename.endswith('.JPG') or filename.endswith('.PNG') or filename.endswith('.bmp') or filename.endswith('.BMP') or filename.endswith('.gif') or filename.endswith('.GIF') ) or filename == LOGO_FILENAME ):
+		continue # skip non-image files and the logo file itself, i.e. skip remaining code below if it does not match our conditions
+
+it was easier then having to use a regex search 
+
